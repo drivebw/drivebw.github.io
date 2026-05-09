@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,67 +7,183 @@
   <title>DriveBW</title>
 
   <style>
-    body {
+
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0F0F0F;
+      color: white;
       font-family: Arial, sans-serif;
-      background-color: #F7F7F7;
-      color: #3C3C3C;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       text-align: center;
+      padding: 30px;
     }
 
     .container {
-      padding: 40px;
+      max-width: 850px;
+      width: 100%;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 25px;
     }
 
     h1 {
+      font-size: 64px;
       color: #58CC02;
-      font-size: 60px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      font-weight: 800;
     }
 
-    p {
-      font-size: 20px;
-      color: #777777;
-      margin-bottom: 40px;
+    .subtitle {
+      font-size: 18px;
+      color: #CCCCCC;
+      line-height: 1.9;
+      margin-bottom: 50px;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .buttons {
+      margin-bottom: 50px;
     }
 
     .button {
       display: inline-block;
-      padding: 14px 28px;
+      padding: 16px 32px;
       margin: 10px;
-      border-radius: 14px;
+      border-radius: 16px;
       text-decoration: none;
       font-weight: bold;
       color: white;
       background-color: #58CC02;
-      transition: 0.2s;
+      transition: 0.2s ease;
+      font-size: 16px;
     }
 
     .button:hover {
       background-color: #46A302;
+      transform: translateY(-2px);
     }
+
+    .contact-box {
+      border-top: 1px solid #2A2A2A;
+      padding-top: 30px;
+    }
+
+    .contact-title {
+      color: #58CC02;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .contact-text {
+      color: #BBBBBB;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .email {
+      color: white;
+      text-decoration: none;
+    }
+
+    .email:hover {
+      color: #58CC02;
+    }
+
+    .footer {
+      margin-top: 40px;
+      color: #666666;
+      font-size: 14px;
+    }
+
   </style>
 </head>
 
 <body>
+
   <div class="container">
+
+    <!-- Upload your logo later and name it logo.png -->
+    <img src="logo.png" alt="DriveBW Logo" class="logo">
+
     <h1>DriveBW</h1>
 
-    <p>
-      Botswana Driving Licence Practice App
-    </p>
+    <div class="subtitle">
 
-    <a class="button" href="privacy-policy.html">
-      Privacy Policy
-    </a>
+      <p>
+        DriveBW is a modern Botswana driving licence practice app designed to help learners prepare smarter, faster, and more confidently for their theory tests.
+      </p>
 
-    <a class="button" href="terms-and-conditions.html">
-      Terms & Conditions
-    </a>
+      <br>
+
+      <p>
+        Instead of relying only on traditional study methods, DriveBW transforms learning into an interactive experience through realistic mock tests, section-based quizzes, answer reviews, and structured study material designed specifically for Botswana licence learners.
+      </p>
+
+      <br>
+
+      <p>
+        Whether you are preparing for your first learner’s licence or revising before your test date, DriveBW helps users build confidence by practicing questions in a clean, organized, and mobile-friendly environment anytime and anywhere.
+      </p>
+
+      <br>
+
+      <p>
+        With instant feedback, progress-focused learning, and an easy-to-use interface inspired by modern educational apps, DriveBW aims to make studying more accessible, engaging, and effective for Botswana drivers.
+      </p>
+
+    </div>
+
+    <div class="buttons">
+
+      <a class="button" href="privacy-policy.html">
+        Privacy Policy
+      </a>
+
+      <a class="button" href="terms-and-conditions.html">
+        Terms & Conditions
+      </a>
+
+    </div>
+
+    <div class="contact-box">
+
+      <div class="contact-title">
+        Contact Information
+      </div>
+
+      <div class="contact-text">
+        Email:
+      </div>
+
+      <div class="contact-text">
+        <a class="email" href="mailto:smartmonetaryinvestments@gmail.com">
+          smartmonetaryinvestments@gmail.com
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      © 2026 DriveBW. All rights reserved.
+    </div>
+
   </div>
+
 </body>
 </html>
+```
