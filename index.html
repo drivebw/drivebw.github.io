@@ -2,194 +2,513 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DriveBW</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DriveBW is a clean Botswana driving licence practice app with mock tests, quizzes, notes, answer reviews, and offline learning." />
+  <title>DriveBW | Practice Smarter for Botswana Driving Tests</title>
+  <link rel="icon" href="favicon_new.png" />
   <style>
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --green: #3adf00;
+      --green-soft: rgba(58, 223, 0, 0.14);
+      --green-dark: #1d8f00;
+      --bg: #050806;
+      --bg-2: #08120b;
+      --card: rgba(255, 255, 255, 0.075);
+      --card-strong: rgba(255, 255, 255, 0.11);
+      --text: #f4fff2;
+      --muted: #aebbad;
+      --line: rgba(255, 255, 255, 0.13);
+      --shadow: 0 26px 90px rgba(0, 0, 0, 0.45);
+      --radius: 28px;
+      --max: 1180px;
     }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      background-color: #0F0F0F;
-      color: white;
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 30px;
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 78% 5%, rgba(58, 223, 0, 0.22), transparent 28%),
+        radial-gradient(circle at 14% 15%, rgba(28, 176, 246, 0.12), transparent 26%),
+        linear-gradient(180deg, #030503 0%, #08110a 45%, #030503 100%);
+      overflow-x: hidden;
     }
 
-  .container {
-    max-width: 850px;
-    width: 100%;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-  .logo {
-    width: 160px;
-    height: 160px;
-    object-fit: contain;
-    margin-bottom: 10px;
-    border-radius: 28px;
-    padding: 14px;
-    background-color: white;
-    box-shadow: 0 0 30px rgba(88, 204, 2, 0.18);
-  }
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.12;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+      z-index: 0;
+    }
+
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; position: relative; z-index: 1; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(20px);
+      background: rgba(3, 7, 4, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 850; letter-spacing: -0.04em; }
+    .brand img { width: 44px; height: 44px; border-radius: 12px; box-shadow: 0 10px 30px rgba(58, 223, 0, .18); object-fit: cover; }
+    .brand span { font-size: 1.28rem; }
+
+    .nav-links { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: .94rem; font-weight: 650; }
+    .nav-links a:hover { color: white; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 16px 50px rgba(0,0,0,.2);
+      transition: transform .2s ease, background .2s ease, border .2s ease;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); background: rgba(255,255,255,.11); border-color: rgba(255,255,255,.22); }
+    .btn.primary { background: linear-gradient(135deg, var(--green) 0%, #8dff61 100%); color: #071007; border: none; }
+
+    .hero { padding: 78px 0 72px; }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 52px; align-items: center; }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border: 1px solid rgba(58, 223, 0, .28);
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: #caffbd;
+      font-weight: 800;
+      font-size: .9rem;
+      margin-bottom: 22px;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 22px var(--green); }
 
     h1 {
-      font-size: 64px;
-      color: #58CC02;
-      margin-bottom: 20px;
-      font-weight: 800;
+      margin: 0;
+      font-size: clamp(3.3rem, 8vw, 7.6rem);
+      line-height: .86;
+      letter-spacing: -0.085em;
+      max-width: 850px;
     }
 
-    .subtitle {
-      font-size: 18px;
-      color: #CCCCCC;
-      line-height: 1.9;
-      margin-bottom: 50px;
-      max-width: 750px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    .gradient-text { color: var(--green); text-shadow: 0 0 50px rgba(58, 223, 0, .22); }
+    .hero p { margin: 26px 0 0; color: var(--muted); font-size: clamp(1.08rem, 2vw, 1.35rem); line-height: 1.7; max-width: 630px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
 
-    .buttons {
-      margin-bottom: 50px;
-    }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 34px; max-width: 620px; }
+    .stat { padding: 17px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.055); }
+    .stat strong { display: block; font-size: 1.35rem; color: white; letter-spacing: -0.04em; }
+    .stat span { display: block; color: var(--muted); font-size: .88rem; margin-top: 4px; }
 
-    .button {
-      display: inline-block;
-      padding: 16px 32px;
-      margin: 10px;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: bold;
+    .phone-stage { position: relative; min-height: 620px; display: grid; place-items: center; }
+    .glow-card {
+      position: absolute;
+      width: min(470px, 92%);
+      aspect-ratio: 1;
+      border-radius: 42px;
+      background: linear-gradient(135deg, rgba(58,223,0,.28), rgba(0,0,0,.1));
+      filter: blur(.2px);
+      transform: rotate(-8deg);
+      box-shadow: 0 55px 160px rgba(58, 223, 0, .16), inset 0 1px 0 rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .hero-phone {
+      position: relative;
+      width: min(320px, 72vw);
+      filter: drop-shadow(0 36px 70px rgba(0,0,0,.65));
+      animation: float 6s ease-in-out infinite;
+    }
+    .mini-card {
+      position: absolute;
+      padding: 15px 16px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(8, 18, 11, .78);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
       color: white;
-      background-color: #58CC02;
-      transition: 0.2s ease;
-      font-size: 16px;
+      font-weight: 850;
+      letter-spacing: -.02em;
+    }
+    .mini-card span { display: block; color: var(--muted); font-size: .78rem; font-weight: 650; margin-top: 4px; letter-spacing: 0; }
+    .mini-card.one { top: 72px; left: 10px; }
+    .mini-card.two { bottom: 86px; right: 0; }
+
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(1.5deg); } 50% { transform: translateY(-18px) rotate(-1deg); } }
+
+    section { padding: 86px 0; }
+    .section-head { max-width: 760px; margin-bottom: 38px; }
+    .section-kicker { color: var(--green); font-weight: 900; letter-spacing: .12em; text-transform: uppercase; font-size: .78rem; }
+    h2 { margin: 12px 0 0; font-size: clamp(2.2rem, 5vw, 4.3rem); line-height: .95; letter-spacing: -0.07em; }
+    .section-head p { color: var(--muted); font-size: 1.08rem; line-height: 1.7; margin: 18px 0 0; }
+
+    .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .feature-card {
+      min-height: 240px;
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.045));
+      box-shadow: 0 24px 70px rgba(0,0,0,.18);
+    }
+    .icon { width: 46px; height: 46px; border-radius: 16px; display: grid; place-items: center; background: var(--green-soft); color: var(--green); font-size: 1.35rem; margin-bottom: 28px; }
+    .feature-card h3 { margin: 0; font-size: 1.18rem; letter-spacing: -.035em; }
+    .feature-card p { margin: 12px 0 0; color: var(--muted); line-height: 1.65; font-size: .96rem; }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .screen-card {
+      padding: 16px;
+      border-radius: 34px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid var(--line);
+      box-shadow: 0 30px 80px rgba(0,0,0,.26);
+      transition: transform .25s ease, border .25s ease;
+    }
+    .screen-card:nth-child(even) { margin-top: 42px; }
+    .screen-card:hover { transform: translateY(-8px); border-color: rgba(58,223,0,.35); }
+    .screen-card img { border-radius: 24px; width: 100%; object-fit: cover; }
+
+    .split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 36px; align-items: center; }
+    .quote-box {
+      border-radius: 42px;
+      border: 1px solid rgba(58,223,0,.22);
+      background: linear-gradient(135deg, rgba(58,223,0,.16), rgba(255,255,255,.05));
+      padding: clamp(28px, 5vw, 54px);
+      box-shadow: var(--shadow);
+    }
+    .quote-box h2 { font-size: clamp(2.4rem, 5vw, 5rem); }
+    .quote-box p { color: var(--muted); line-height: 1.8; font-size: 1.08rem; }
+    .check-list { display: grid; gap: 14px; }
+    .check {
+      display: flex;
+      gap: 14px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .check b { color: white; }
+    .tick { flex: 0 0 auto; width: 24px; height: 24px; border-radius: 999px; display: grid; place-items: center; background: var(--green); color: #061006; font-weight: 950; }
+
+    .download {
+      text-align: center;
+      padding: clamp(34px, 7vw, 80px);
+      border-radius: 52px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(58,223,0,.22), transparent 38%),
+        linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.045));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .download h2 { max-width: 900px; margin-left: auto; margin-right: auto; }
+    .download p { color: var(--muted); font-size: 1.1rem; line-height: 1.7; max-width: 690px; margin: 20px auto 0; }
+    .store-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+    .legal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .legal-card {
+      padding: 28px;
+      border-radius: 30px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+    }
+    .legal-card h3 { margin: 0 0 12px; font-size: 1.35rem; letter-spacing: -.04em; }
+    .legal-card p { color: var(--muted); line-height: 1.7; margin: 0 0 18px; }
+
+    footer { padding: 44px 0; border-top: 1px solid rgba(255,255,255,.08); color: var(--muted); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: center; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a:hover { color: white; }
+
+    .modal {
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 28px;
+      padding: 0;
+      width: min(860px, calc(100% - 32px));
+      max-height: 84vh;
+      color: var(--text);
+      background: #071008;
+      box-shadow: 0 50px 150px rgba(0,0,0,.7);
+    }
+    .modal::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blur(9px); }
+    .modal-head { position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 24px; border-bottom: 1px solid var(--line); background: rgba(7,16,8,.92); backdrop-filter: blur(16px); }
+    .modal-head h3 { margin: 0; font-size: 1.35rem; }
+    .close { border: 0; border-radius: 999px; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; background: rgba(255,255,255,.09); color: white; }
+    .modal-body { padding: 24px; color: #dbe7d9; line-height: 1.75; }
+    .modal-body h4 { color: white; margin: 26px 0 8px; font-size: 1.05rem; }
+    .modal-body p, .modal-body ul { margin: 0 0 14px; }
+    .modal-body a { color: #9dff80; text-decoration: underline; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .phone-stage { min-height: 520px; }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .showcase { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
     }
 
-    .button:hover {
-      background-color: #46A302;
-      transform: translateY(-2px);
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 26px, var(--max)); }
+      .hero { padding-top: 48px; }
+      .stats, .features, .showcase, .legal-grid { grid-template-columns: 1fr; }
+      .screen-card:nth-child(even) { margin-top: 0; }
+      .phone-stage { min-height: 460px; }
+      .mini-card { display: none; }
+      .brand span { font-size: 1.1rem; }
     }
-
-    .contact-box {
-      border-top: 1px solid #2A2A2A;
-      padding-top: 30px;
-    }
-
-    .contact-title {
-      color: #58CC02;
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .contact-text {
-      color: #BBBBBB;
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    .email {
-      color: white;
-      text-decoration: none;
-    }
-
-    .email:hover {
-      color: #58CC02;
-    }
-
-    .footer {
-      margin-top: 40px;
-      color: #666666;
-      font-size: 14px;
-    }
-
   </style>
 </head>
-
 <body>
+  <div class="noise"></div>
 
-  <div class="container">
-
-    <!-- Upload your logo later and name it logo.png -->
-    <img src="logo.png" alt="DriveBW Logo" class="logo">
-
-    <h1>DriveBW</h1>
-
-    <div class="subtitle">
-
-      <p>
-        DriveBW is a modern Botswana driving licence practice app designed to help learners prepare smarter, faster, and more confidently for their theory tests.
-      </p>
-
-      <br>
-
-      <p>
-        Instead of relying only on traditional study methods, DriveBW transforms learning into an interactive experience through realistic mock tests, section-based quizzes, answer reviews, and structured study material designed specifically for Botswana licence learners.
-      </p>
-
-      <br>
-
-      <p>
-        Whether you are preparing for your first learner’s licence or revising before your test date, DriveBW helps users build confidence by practicing questions in a clean, organized, and mobile-friendly environment anytime and anywhere.
-      </p>
-
-      <br>
-
-      <p>
-        With instant feedback, progress-focused learning, and an easy-to-use interface inspired by modern educational apps, DriveBW aims to make studying more accessible, engaging, and effective for Botswana drivers.
-      </p>
-
-    </div>
-
-    <div class="buttons">
-
-      <a class="button" href="privacy-policy.html">
-        Privacy Policy
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="DriveBW home">
+        <img src="app_logo_512.png" alt="DriveBW app logo" onerror="this.src='app_logo_1024.png'" />
+        <span>DriveBW</span>
       </a>
-
-      <a class="button" href="terms-and-conditions.html">
-        Terms & Conditions
-      </a>
-
-    </div>
-
-    <div class="contact-box">
-
-      <div class="contact-title">
-        Contact Information
+      <div class="nav-links" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#screens">Screens</a>
+        <a href="#legal">Legal</a>
+        <a href="mailto:smartmonetaryinvestments@gmail.com">Contact</a>
       </div>
-
-      <div class="contact-text">
-        Email:
-      </div>
-
-      <div class="contact-text">
-        <a class="email" href="mailto:smartmonetaryinvestments@gmail.com">
-          smartmonetaryinvestments@gmail.com
-        </a>
-      </div>
-
+      <a class="btn primary" href="#download">Get ready</a>
     </div>
+  </nav>
 
-    <div class="footer">
-      © 2026 DriveBW. All rights reserved.
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Built for Botswana learners</div>
+          <h1>Pass the theory with <span class="gradient-text">practice that feels simple.</span></h1>
+          <p>DriveBW helps you prepare for Botswana driving licence tests with clean mock exams, section quizzes, study notes, answer reviews, and offline learning — all in one focused app.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#download">Start practicing smarter</a>
+            <a class="btn" href="#screens">See the app</a>
+          </div>
+          <div class="stats" aria-label="DriveBW highlights">
+            <div class="stat"><strong>B1 & C1</strong><span>Practice support</span></div>
+            <div class="stat"><strong>Offline</strong><span>Learn anywhere</span></div>
+            <div class="stat"><strong>Review</strong><span>Know every mistake</span></div>
+          </div>
+        </div>
+
+        <div class="phone-stage" aria-label="DriveBW app preview">
+          <div class="glow-card"></div>
+          <img class="hero-phone" src="drivebw_phone_image_1.png" alt="DriveBW phone app preview" />
+          <div class="mini-card one">Timed tests<span>Build real exam confidence</span></div>
+          <div class="mini-card two">Smart review<span>Fix mistakes faster</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">Why DriveBW</div>
+          <h2>Less confusion. More confident practice.</h2>
+          <p>Everything is designed to keep learners focused: clear sections, quick quizzes, timed mock tests, and answers that help you understand what went wrong.</p>
+        </div>
+        <div class="features">
+          <article class="feature-card">
+            <div class="icon">⏱</div>
+            <h3>Mock tests with timers</h3>
+            <p>Practice under exam-style pressure so the real test feels more familiar.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">📚</div>
+            <h3>Section notes</h3>
+            <p>Study by topic and focus on the parts you actually need to improve.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">✅</div>
+            <h3>Answer reviews</h3>
+            <p>See your chosen answers, correct answers, and learn from each mistake.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">🌙</div>
+            <h3>Clean dark interface</h3>
+            <p>A sharp, modern layout made for comfortable studying at any time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="screens">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">Inside the app</div>
+          <h2>Built to make every session feel useful.</h2>
+          <p>From the first practice question to the final review screen, DriveBW keeps the experience direct, clean, and easy to follow.</p>
+        </div>
+        <div class="showcase">
+          <div class="screen-card"><img src="drivebw_phone_image_2.png" alt="DriveBW timed test screen" /></div>
+          <div class="screen-card"><img src="drivebw_phone_image_3.png" alt="DriveBW answer review screen" /></div>
+          <div class="screen-card"><img src="drivebw_phone_image_5.png" alt="DriveBW study notes screen" /></div>
+          <div class="screen-card"><img src="drivebw_phone_image_8.png" alt="DriveBW booking information screen" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div class="quote-box">
+          <div class="section-kicker">The goal</div>
+          <h2>Walk in prepared, not stressed.</h2>
+          <p>DriveBW is for learners who want to stop guessing and start practicing with structure. Learn the signs, test yourself, review your mistakes, and come back stronger.</p>
+        </div>
+        <div class="check-list">
+          <div class="check"><span class="tick">✓</span><span><b>Practice by class.</b> Prepare for Botswana driving licence learning with focused Class B1 and Class C1 support.</span></div>
+          <div class="check"><span class="tick">✓</span><span><b>Study without noise.</b> Simple screens, clear questions, and no unnecessary distractions.</span></div>
+          <div class="check"><span class="tick">✓</span><span><b>Use it offline.</b> Most learning features work using content stored directly on your device.</span></div>
+          <div class="check"><span class="tick">✓</span><span><b>Upgrade when ready.</b> Free practice is available, with premium access for unlimited tests and all sections.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download">
+      <div class="wrap">
+        <div class="download">
+          <div class="section-kicker">DriveBW</div>
+          <h2>Your Botswana driving test practice, made cleaner.</h2>
+          <p>Download DriveBW and turn short study sessions into real progress. Practice the questions, learn the sections, and review every answer with confidence.</p>
+          <div class="store-buttons">
+            <a class="btn primary" href="#">Coming soon on Google Play</a>
+            <a class="btn" href="#">Coming soon on the App Store</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="legal">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">Trust & transparency</div>
+          <h2>Independent learning tool.</h2>
+          <p>DriveBW is an educational practice app and is not affiliated with, endorsed by, authorized by, or connected to the Government of Botswana, DRTS, or any government entity.</p>
+        </div>
+        <div class="legal-grid">
+          <div class="legal-card">
+            <h3>Privacy Policy</h3>
+            <p>DriveBW does not directly collect, store, or sell personal information. Most features operate offline, with subscriptions handled by the app stores.</p>
+            <button class="btn" onclick="document.getElementById('privacy').showModal()">Read privacy policy</button>
+          </div>
+          <div class="legal-card">
+            <h3>Terms & Conditions</h3>
+            <p>DriveBW is for educational and practice purposes only. Users should always refer to official Botswana government sources for current licensing information.</p>
+            <button class="btn" onclick="document.getElementById('terms').showModal()">Read terms</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>© 2026 DriveBW. Built for Botswana driving licence learners.</div>
+      <div class="footer-links">
+        <a href="mailto:smartmonetaryinvestments@gmail.com">Support</a>
+        <a href="https://www.gov.bw/transport/driving-licence-application" target="_blank" rel="noopener">Official licence source</a>
+        <a href="https://www.gov.bw" target="_blank" rel="noopener">gov.bw</a>
+      </div>
     </div>
+  </footer>
 
-  </div>
+  <dialog class="modal" id="privacy">
+    <div class="modal-head"><h3>Privacy Policy</h3><button class="close" onclick="document.getElementById('privacy').close()">×</button></div>
+    <div class="modal-body">
+      <p><b>App Name:</b> DriveBW<br><b>Effective Date:</b> 18th May 2026</p>
+      <h4>Introduction</h4><p>This Privacy Policy explains how DriveBW operates and how your information is handled when you use the app.</p>
+      <h4>Who This App Is For</h4><p>DriveBW is a driving licence practice and learning application designed for users preparing for Botswana driving licence tests.</p>
+      <h4>Information We Collect</h4><p>DriveBW does not directly collect, store, or share personal information. The app operates primarily offline and does not require users to create an account. We do not use analytics tools, advertising trackers, or third-party tracking services.</p>
+      <h4>How We Use Information</h4><ul><li>To provide driving licence practice and learning features</li><li>To locally store app settings and progress on your device</li><li>To verify premium subscription access through Google Play Store or Apple App Store services</li><li>To maintain and improve app functionality</li></ul>
+      <h4>Offline Functionality</h4><p>Most DriveBW features operate offline using content stored directly on your device.</p>
+      <h4>Subscription and Billing</h4><p>Premium subscriptions and purchases are processed securely through Google Play Store and Apple App Store services. DriveBW does not directly store or process payment card information.</p>
+      <h4>How Your Data Is Stored</h4><p>DriveBW stores app settings and progress locally on your device. We do not store personal information on external servers.</p>
+      <h4>Data Sharing</h4><p>DriveBW does not sell, share, or distribute personal information because the app does not directly collect personal information.</p>
+      <h4>Data Retention</h4><p>DriveBW does not retain personal information on external servers. Any locally stored app data remains on your device unless removed by uninstalling the app.</p>
+      <h4>Your Rights</h4><ul><li>You may cancel your subscription at any time through Google Play Store or Apple App Store settings.</li><li>You may remove locally stored app data by uninstalling the app.</li></ul>
+      <h4>Security</h4><p>We take reasonable measures to ensure the app functions securely. However, no software or electronic storage method can guarantee absolute security.</p>
+      <h4>Children's Privacy</h4><p>DriveBW does not knowingly collect personal information from children or users of any age.</p>
+      <h4>International Use</h4><p>DriveBW is intended for Botswana driving licence learning use. If you access the app from another location, you do so at your own discretion.</p>
+      <h4>Third-Party Services</h4><p>DriveBW may rely on platform services such as Google Play Store and Apple App Store for subscription processing, app distribution, and related platform functionality.</p>
+      <h4>Government Affiliation Disclaimer</h4><p>DriveBW is an independent educational and practice application. DriveBW is not affiliated with, endorsed by, authorized by, or connected to the Government of Botswana, the Department of Road Transport and Safety (DRTS), or any other government entity.</p><p>DriveBW provides driving licence preparation content for learning and practice purposes only. Users should always refer to official government sources for the most accurate and up-to-date driving licence information.</p>
+      <h4>Official Government Sources</h4><p><a href="https://www.gov.bw/transport/driving-licence-application" target="_blank" rel="noopener">Driving licence application</a><br><a href="https://www.gov.bw" target="_blank" rel="noopener">gov.bw</a></p>
+      <h4>Changes to This Privacy Policy</h4><p>We may update this Privacy Policy from time to time. Continued use of the app after changes are made means you accept the revised policy.</p>
+      <h4>Contact</h4><p>For privacy-related questions, contact <a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a>.</p>
+      <h4>Governing Law</h4><p>This Privacy Policy is governed by the laws of Botswana.</p>
+    </div>
+  </dialog>
 
+  <dialog class="modal" id="terms">
+    <div class="modal-head"><h3>Terms & Conditions</h3><button class="close" onclick="document.getElementById('terms').close()">×</button></div>
+    <div class="modal-body">
+      <p><b>App Name:</b> DriveBW<br><b>Effective Date:</b> 18th May 2026</p>
+      <h4>Introduction</h4><p>Welcome to DriveBW. These Terms & Conditions govern your use of the mobile application. By using the app, you agree to these Terms. If you do not agree, please do not use the app.</p>
+      <h4>Description of Service</h4><p>DriveBW is a driving licence practice and learning application designed to help users prepare for driving licence tests in Botswana. The app provides mock tests simulating real driving exams, section-based quizzes, notes, and answer review tools. This app is intended for educational and practice purposes only.</p>
+      <h4>No Government Affiliation</h4><p>DriveBW is not affiliated with, endorsed by, or partnered with any government authority, including the Botswana Department of Road Transport and Safety (DRTS), and is not an official driving test provider. Use of this app does not guarantee success in any official driving test.</p>
+      <h4>Offline Functionality</h4><p>Most DriveBW features operate offline using content stored directly on your device.</p>
+      <h4>Subscription & Payments</h4><p><b>Free Plan:</b> 1 mock test per month and access limited to Sections 1–4.</p><p><b>Paid Plan:</b> Unlimited mock tests and access to all sections.</p><p>Payments and subscriptions are processed through Google Play Store and Apple App Store services. Users may cancel subscriptions at any time through their app store account settings. Refunds are subject to Google Play Store or Apple App Store policies.</p>
+      <h4>Acceptable Use</h4><ul><li>Do not copy, reproduce, distribute, or resell the question bank or app content.</li><li>Do not attempt to reverse engineer, modify, or exploit the app.</li><li>Do not misuse premium subscription access or app functionality.</li></ul><p>Violation of these Terms may result in restriction or termination of app access.</p>
+      <h4>Intellectual Property</h4><p>All content within DriveBW, including questions, notes, images, branding, and design elements, is protected. Some educational materials are inspired by publicly available driving education resources, including work associated with Ingrid Kittmann and Matshwao, but are presented in a transformed and independent educational format. Users may not copy, reproduce, or reuse app content without permission.</p>
+      <h4>Accuracy of Content</h4><p>While we aim to provide accurate and helpful learning material, DriveBW does not guarantee that all content perfectly reflects official examination standards or real-world driving test conditions.</p>
+      <h4>Limitation of Liability</h4><p>DriveBW is not responsible for failure to pass any driving test, decisions made based on app content, or any loss or damages resulting from use of the app. Use of the app is at your own discretion and risk.</p>
+      <h4>Data & Privacy</h4><p>DriveBW operates primarily offline and does not directly collect or store personal information on external servers. App settings and progress may be stored locally on your device.</p>
+      <h4>Third-Party Services</h4><p>DriveBW may rely on platform services such as Google Play Store and Apple App Store for app distribution, subscription processing, and related platform functionality.</p>
+      <h4>Government Affiliation Disclaimer</h4><p>DriveBW is an independent educational and practice application. DriveBW is not affiliated with, endorsed by, authorized by, or connected to the Government of Botswana, the Department of Road Transport and Safety (DRTS), or any other government entity.</p><p>DriveBW provides driving licence preparation content for learning and practice purposes only. Users should always refer to official government sources for the most accurate and up-to-date driving licence information.</p>
+      <h4>Official Government Sources</h4><p><a href="https://www.gov.bw/transport/driving-licence-application" target="_blank" rel="noopener">Driving licence application</a><br><a href="https://www.gov.bw" target="_blank" rel="noopener">gov.bw</a></p>
+      <h4>Termination</h4><p>We reserve the right to restrict or terminate access to the app if users violate these Terms or misuse the service.</p>
+      <h4>Changes to Terms</h4><p>We may update these Terms & Conditions from time to time. Continued use of the app after updates means you accept the revised Terms.</p>
+      <h4>Contact</h4><p>For questions regarding these Terms & Conditions, contact <a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a>.</p>
+      <h4>Governing Law</h4><p>These Terms & Conditions are governed by the laws of Botswana. Any disputes will be handled within Botswana jurisdiction.</p>
+    </div>
+  </dialog>
+
+  <script>
+    document.querySelectorAll('dialog').forEach((dialog) => {
+      dialog.addEventListener('click', (event) => {
+        const rect = dialog.getBoundingClientRect();
+        const isOutside = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+        if (isOutside) dialog.close();
+      });
+    });
+  </script>
 </body>
 </html>
-
