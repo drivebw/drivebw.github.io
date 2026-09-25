@@ -1,56 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Download DriveBW, a Botswana driving licence test practice app for Class B and Class C learners. Study road signs, take mock theory tests, complete section quizzes, review answers, and learn offline." />
-  <meta name="keywords" content="DriveBW, Botswana driving licence test, Botswana driving test app, Botswana theory test, Botswana learner licence, DRTS Botswana, Class B driving test Botswana, Class C driving test Botswana, road signs Botswana, mock driving test Botswana, driving licence practice Botswana, learner driver app Botswana, Botswana road rules, driving test questions Botswana" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="DriveBW" />
-  <meta name="theme-color" content="#3adf00" />
-  <meta name="apple-itunes-app" content="app-id=6777334737" />
-  <meta property="og:title" content="DriveBW | Botswana Driving Licence Test Practice App" />
-  <meta property="og:description" content="Practice Botswana driving licence theory tests with mock exams, Class B and Class C quizzes, road signs, study notes, answer reviews, and offline learning." />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="DriveBW" />
-  <meta property="og:locale" content="en_GB" />
-  <meta property="og:image" content="app_logo_1024.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="DriveBW | Botswana Driving Licence Test Practice" />
-  <meta name="twitter:description" content="Download DriveBW for Botswana Class B and Class C driving licence practice, mock tests, road signs, quizzes, notes, and answer reviews." />
-  <meta name="twitter:image" content="app_logo_1024.png" />
-  <link rel="alternate" href="android-app://com.drivebw.app/https/play.google.com/store/apps/details?id=com.drivebw.app" />
-  <title>DriveBW | Botswana Driving Licence Test Practice App</title>
-  <link rel="icon" href="favicon_new.png" />
-  <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "DriveBW",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Android, iOS",
-    "description": "DriveBW helps Botswana learners prepare for Class B and Class C driving licence theory tests with mock exams, section quizzes, road signs, study notes, answer reviews, and offline learning.",
-    "downloadUrl": [
-        "https://play.google.com/store/apps/details?id=com.drivebw.app&hl=en-gb&utm_source=apac_med",
-        "https://apps.apple.com/bw/app/drivebw/id6777334737"
-    ],
-    "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "DriveBW",
-        "email": "smartmonetaryinvestments@gmail.com"
-    },
-    "areaServed": {
-        "@type": "Country",
-        "name": "Botswana"
-    }
-}
-  </script>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="DriveBW is a clean Botswana driving licence practice app with mock tests, quizzes, notes, answer reviews, and offline learning." name="description"/>
+<title>DriveBW | Practice Smarter for Botswana Driving Tests</title>
+<link href="favicon_new.png" rel="icon"/>
+<style>
     :root {
       --green: #3adf00;
       --green-soft: rgba(58, 223, 0, 0.14);
@@ -284,10 +241,8 @@
     .download h2 { max-width: 900px; margin-left: auto; margin-right: auto; }
     .download p { color: var(--muted); font-size: 1.1rem; line-height: 1.7; max-width: 690px; margin: 20px auto 0; }
     .store-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
-    .seo-note { color: var(--muted); font-size: .98rem; line-height: 1.7; max-width: 820px; margin: 22px auto 0; }
-    .seo-note b { color: white; }
 
-    .legal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .legal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .legal-card {
       padding: 28px;
       border-radius: 30px;
@@ -342,249 +297,554 @@
   </style>
 </head>
 <body>
-  <div class="noise"></div>
-
-  <nav class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="DriveBW home">
-        <img src="app_logo_512.png" alt="DriveBW app logo" onerror="this.src='app_logo_1024.png'" />
-        <span>DriveBW</span>
+<div class="noise"></div>
+<nav class="nav">
+<div class="wrap nav-inner">
+<a aria-label="DriveBW home" class="brand" href="#top">
+<img alt="DriveBW app logo" onerror="this.src='app_logo_1024.png'" src="app_logo_512.png"/>
+<span>DriveBW</span>
+</a>
+<div aria-label="Main navigation" class="nav-links">
+<a href="#features">Features</a>
+<a href="#screens">Screens</a>
+<a href="#legal">Legal</a>
+<button class="nav-link-button" onclick="openModal('support')">Support</button>
+<button class="nav-link-button" onclick="openModal('contact')">Contact</button>
+</div>
+<a class="btn primary" href="#download">Get ready</a>
+</div>
+</nav>
+<main id="top">
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<div class="eyebrow"><span class="dot"></span> Built for Botswana learners</div>
+<h1>Pass the theory with <span class="gradient-text">practice that feels simple.</span></h1>
+<p>DriveBW helps you prepare for Botswana driving licence tests with clean mock exams, section quizzes, study notes, answer reviews, and offline learning — all in one focused app.</p>
+<div class="hero-actions">
+<a class="btn primary" href="#download">Start practicing smarter</a>
+<a class="btn" href="#screens">See the app</a>
+</div>
+<div aria-label="DriveBW highlights" class="stats">
+<div class="stat"><strong>Class B &amp; C</strong><span>Practice support</span></div>
+<div class="stat"><strong>Offline</strong><span>Learn anywhere</span></div>
+<div class="stat"><strong>Review</strong><span>Know every mistake</span></div>
+</div>
+</div>
+<div aria-label="DriveBW app preview" class="phone-stage">
+<div class="glow-card"></div>
+<img alt="DriveBW phone app preview" class="hero-phone" src="drivebw_phone_image_1.png"/>
+<div class="mini-card one">Timed tests<span>Build real exam confidence</span></div>
+<div class="mini-card two">Smart review<span>Fix mistakes faster</span></div>
+</div>
+</div>
+</section>
+<section id="features">
+<div class="wrap">
+<div class="section-head">
+<div class="section-kicker">Why DriveBW</div>
+<h2>Less confusion. More confident practice.</h2>
+<p>Everything is designed to keep learners focused: clear sections, quick quizzes, timed mock tests, and answers that help you understand what went wrong.</p>
+</div>
+<div class="features">
+<article class="feature-card">
+<div class="icon">⏱</div>
+<h3>Mock tests with timers</h3>
+<p>Practice under exam-style pressure so the real test feels more familiar.</p>
+</article>
+<article class="feature-card">
+<div class="icon">📚</div>
+<h3>Section notes</h3>
+<p>Study by topic and focus on the parts you actually need to improve.</p>
+</article>
+<article class="feature-card">
+<div class="icon">✅</div>
+<h3>Answer reviews</h3>
+<p>See your chosen answers, correct answers, and learn from each mistake.</p>
+</article>
+<article class="feature-card">
+<div class="icon">🌙</div>
+<h3>Clean dark interface</h3>
+<p>A sharp, modern layout made for comfortable studying at any time.</p>
+</article>
+</div>
+</div>
+</section>
+<section id="screens">
+<div class="wrap">
+<div class="section-head">
+<div class="section-kicker">Inside the app</div>
+<h2>Built to make every session feel useful.</h2>
+<p>From the first practice question to the final review screen, DriveBW keeps the experience direct, clean, and easy to follow.</p>
+</div>
+<div class="showcase">
+<div class="screen-card"><img alt="DriveBW timed test screen" src="drivebw_phone_image_2.png"/></div>
+<div class="screen-card"><img alt="DriveBW answer review screen" src="drivebw_phone_image_3.png"/></div>
+<div class="screen-card"><img alt="DriveBW study notes screen" src="drivebw_phone_image_5.png"/></div>
+<div class="screen-card"><img alt="DriveBW booking information screen" src="drivebw_phone_image_8.png"/></div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap split">
+<div class="quote-box">
+<div class="section-kicker">The goal</div>
+<h2>Walk in prepared, not stressed.</h2>
+<p>DriveBW is for learners who want to stop guessing and start practicing with structure. Learn the signs, test yourself, review your mistakes, and come back stronger.</p>
+</div>
+<div class="check-list">
+<div class="check"><span class="tick">✓</span><span><b>Practice by class.</b> Prepare for Botswana driving licence learning with focused Class B and Class C support.</span></div>
+<div class="check"><span class="tick">✓</span><span><b>Study without noise.</b> Simple screens, clear questions, and no unnecessary distractions.</span></div>
+<div class="check"><span class="tick">✓</span><span><b>Use it offline.</b> Most learning features work using content stored directly on your device.</span></div>
+<div class="check"><span class="tick">✓</span><span><b>Upgrade when ready.</b> Free practice is available, with premium access for unlimited tests and all sections.</span></div>
+</div>
+</div>
+</section>
+<section id="download">
+<div class="wrap">
+<div class="download">
+<div class="section-kicker">DriveBW</div>
+<h2>Available now on Google Play and the App Store.</h2>
+<p>Download DriveBW and turn short study sessions into real progress. Practice the questions, learn the sections, and review every answer with confidence.</p>
+<div class="store-buttons">
+<a class="btn primary" href="https://play.google.com/store/apps/details?id=com.drivebw.app&amp;hl=en-gb&amp;utm_source=apac_med" rel="noopener" target="_blank">Available on Google Play</a>
+<a class="btn" href="https://apps.apple.com/bw/app/drivebw/id6777334737" rel="noopener" target="_blank">Available on the App Store</a>
+</div>
+</div>
+</div>
+</section>
+<section id="legal">
+<div class="wrap">
+<div class="section-head">
+<div class="section-kicker">Trust &amp; transparency</div>
+<h2>Independent learning tool.</h2>
+<p>DriveBW is an educational practice app and is not affiliated with, endorsed by, authorized by, or connected to the Government of Botswana, DRTS, or any government entity.</p>
+</div>
+<div class="legal-grid"><div class="legal-card"><h3>Privacy Policy</h3><p>DriveBW does not require a DriveBW account, but services including Google AdMob, Google Play and RevenueCat may process device, advertising, technical and purchase information.</p><button class="btn" onclick="openModal('privacy')" type="button">Read privacy policy</button></div><div class="legal-card"><h3>Terms &amp; Conditions</h3><p>Review the rules for free advertising-supported access, Premium purchases, acceptable use, third-party services and DriveBW's educational disclaimer.</p><button class="btn" onclick="openModal('terms')" type="button">Read terms</button></div><div class="legal-card"><h3>Data Deletion</h3><p>Learn how to clear locally stored DriveBW data and how to request deletion of data associated with DriveBW services.</p><button class="btn" onclick="openModal('deletion')" type="button">Data deletion</button></div></div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap footer-inner">
+<div>© 2026 DriveBW. Built for Botswana driving licence learners.</div>
+<div class="footer-links">
+<button class="footer-link-button" onclick="openModal('support')">Support</button>
+<button class="footer-link-button" onclick="openModal('contact')">Contact</button>
+<button class="footer-link-button" data-legal-link="true" onclick="openModal('privacy')" type="button">Privacy</button><button class="footer-link-button" data-legal-link="true" onclick="openModal('terms')" type="button">Terms</button><button class="footer-link-button" data-legal-link="true" onclick="openModal('deletion')" type="button">Data deletion</button><a href="https://play.google.com/store/apps/details?id=com.drivebw.app&amp;hl=en-gb&amp;utm_source=apac_med" rel="noopener" target="_blank">Google Play</a><a href="https://apps.apple.com/bw/app/drivebw/id6777334737" rel="noopener" target="_blank">App Store</a><a href="https://www.gov.bw/transport/driving-licence-application" rel="noopener" target="_blank">Official licence source</a>
+<a href="https://www.gov.bw" rel="noopener" target="_blank">gov.bw</a>
+</div>
+</div>
+</footer>
+<dialog class="modal" id="contact">
+<div class="modal-head"><h3>Contact DriveBW</h3><button class="close" onclick="closeModal('contact')">×</button></div>
+<div class="modal-body">
+<h4>Contact Information</h4>
+<p>Have a question, feedback, subscription concern, or app issue? Contact DriveBW by email and we will get back to you as soon as possible.</p>
+<h4>Email</h4>
+<p><a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a></p>
+<h4>What to include</h4>
+<ul>
+<li>Your device type, such as Android phone, tablet, or iPhone.</li>
+<li>The app version, if available.</li>
+<li>A short explanation of the issue or question.</li>
+</ul>
+<h4>App</h4>
+<p><b>DriveBW</b><br/>Botswana driving licence practice and learning app for Class B and Class C learners.</p>
+</div>
+</dialog>
+<dialog class="modal" id="support">
+<div class="modal-head"><h3>Support</h3><button class="close" onclick="closeModal('support')">×</button></div>
+<div class="modal-body">
+<h4>Need help with DriveBW?</h4>
+<p>If you need help using the app, have feedback, or have a subscription-related question, contact DriveBW support by email.</p>
+<h4>Support Email</h4>
+<p><a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a></p>
+<h4>Faster support</h4>
+<p>When emailing, please include your device type, app version if available, and a short description of what happened.</p>
+</div>
+</dialog>
+<dialog class="modal" id="privacy">
+<div class="modal-head"><h3>Privacy Policy</h3><button class="close" onclick="closeModal('privacy')">×</button></div>
+<div class="modal-body"><p><b>App Name:</b> DriveBW<br/><b>Effective Date:</b> 25 September 2026<br/><b>Contact:</b> <a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a></p><h4>1. Introduction</h4><p>
+    This Privacy Policy explains how information is handled when you use DriveBW. DriveBW is an
+    independent driving licence learning and practice application for users preparing for Botswana
+    driving licence tests.
+  </p><div class="notice">
+<p>
+      DriveBW does not require you to create a DriveBW account or directly provide your name, phone
+      number, postal address, or payment-card details. However, the app uses third-party advertising,
+      consent-management, app-store, and purchase-validation services that may collect or process
+      technical, advertising, purchase, and usage information as described below.
+    </p>
+</div><h4>2. Information Stored Locally on Your Device</h4><p>DriveBW may store the following information locally on your device:</p><ul>
+<li>Learning progress, scores, quiz and mock-test history</li>
+<li>App settings, theme preferences, onboarding status, and other preferences</li>
+<li>Premium-entitlement cache and purchase-restoration status</li>
+<li>Offline-usage allowances, cooldown dates, and ad-related frequency or session counters</li>
+<li>Other information needed for the app to operate and remember your progress</li>
+</ul><p>
+    Some information may be stored using secure device storage. Removing the app usually removes
+    ordinary local app data, but certain secure-storage or app-store records may remain according to
+    the operating system, device backup settings, or store-account rules.
+  </p><h4>3. Advertising and Google Mobile Ads</h4><p>
+    The free version of DriveBW displays advertising through Google AdMob and the Google Mobile Ads
+    SDK. Ads may include banner, interstitial, and rewarded formats.
+  </p><p>Depending on your device, region, consent choices, and platform settings, Google and its advertising partners may process:</p><ul>
+<li>IP address, which may be used to estimate a general location</li>
+<li>Advertising identifiers and other device- or app-related identifiers</li>
+<li>Advertising data, such as ads shown, impressions, and ad interactions</li>
+<li>App and product interactions, such as app launches, taps, and video views</li>
+<li>Device, operating-system, app-version, and network information</li>
+<li>Crash logs, diagnostics, performance information, and fraud-prevention signals</li>
+</ul><p>
+    Advertising may be personalized, non-personalized, limited, or technically served depending on
+    applicable law, consent choices, account configuration, and device settings. Non-personalized ads
+    may still use limited identifiers or local storage for functions such as frequency capping,
+    aggregated reporting, security, and fraud prevention.
+  </p><h4>4. Consent and Privacy Choices</h4><p>
+    DriveBW uses Google's User Messaging Platform where required to request, store, and apply privacy
+    choices relating to advertising and local device storage. Depending on your location and the
+    privacy messages available for your device, you may be shown options concerning personalized ads,
+    non-personalized ads, limited ads, or other data uses.
+  </p><p>
+    You may also control advertising identifiers and tracking permissions through your Android,
+    Google, Apple, or iOS device settings. Choices available to you vary by device, operating system,
+    account, and country.
+  </p><h4>5. Purchases, Premium Access, and RevenueCat</h4><p>
+    DriveBW uses RevenueCat to validate purchases, restore purchases, and determine whether the
+    Premium entitlement is active. RevenueCat and the relevant app store may process information such as:
+  </p><ul>
+<li>An anonymous or pseudonymous app-user identifier</li>
+<li>Device type, operating system, app version, and technical information</li>
+<li>Product identifiers, purchase dates, entitlement status, and subscription status</li>
+<li>Apple receipt information or Google Play purchase tokens</li>
+<li>Country, currency, store, and other transaction-related metadata</li>
+<li>Information needed to detect fraud, validate purchases, and provide customer support</li>
+</ul><p>
+    Payment-card details are processed by Apple App Store or Google Play and are not directly received
+    or stored by DriveBW.
+  </p><h4>6. How Information Is Used</h4><p>Information may be used to:</p><ul>
+<li>Provide notes, quizzes, mock tests, progress tracking, and other app functions</li>
+<li>Display, measure, limit, and improve advertising</li>
+<li>Request and apply privacy or advertising-consent choices</li>
+<li>Validate, restore, and manage Premium access</li>
+<li>Protect against fraud, abuse, invalid advertising activity, and security threats</li>
+<li>Diagnose crashes, errors, and performance problems</li>
+<li>Comply with legal, app-store, and platform requirements</li>
+</ul><h4>7. Third Parties and Data Sharing</h4><p>
+    DriveBW does not sell your personal information. Information may be transmitted to or processed by
+    third-party providers that support the app, including:
+  </p><ul>
+<li>Google AdMob and Google Mobile Ads services for advertising, measurement, consent, security, and fraud prevention</li>
+<li>RevenueCat for purchase validation, entitlement management, and purchase restoration</li>
+<li>Google Play and Apple App Store for app distribution, billing, refunds, and store-account services</li>
+<li>Other service providers required by those platforms or advertising systems</li>
+</ul><p>
+    These third parties process information under their own terms and privacy policies. Their practices
+    may differ by country, account, product configuration, and legal requirement.
+  </p><h4>8. Third-Party Privacy Information</h4><ul>
+<li><a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy Policy</a></li>
+<li><a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">How Google uses information from apps and sites that use its services</a></li>
+<li><a href="https://www.revenuecat.com/privacy/" rel="noopener noreferrer" target="_blank">RevenueCat Privacy Policy</a></li>
+<li><a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer" target="_blank">Apple Privacy Policy</a></li>
+</ul><h4>9. Legal Bases</h4><p>
+    Where applicable law requires a legal basis, information may be processed based on your consent,
+    performance of a purchase or service agreement, compliance with legal obligations, and legitimate
+    interests such as operating the app, preventing fraud, protecting security, and improving service reliability.
+  </p><h4>10. Data Retention</h4><p>
+    Local app information is retained for as long as it remains on your device or is needed for app
+    operation. Third-party providers and app stores retain information according to their own legal,
+    security, fraud-prevention, accounting, and operational requirements.
+  </p><p>
+    DriveBW cannot directly delete information held only by Google, Apple, RevenueCat, or another
+    third party. Requests concerning those records may need to be made directly to the relevant provider.
+  </p><h4>11. Your Rights and Choices</h4><p>Depending on your location, you may have rights to request access, correction, deletion, restriction, objection, portability, or withdrawal of consent.</p><p>You can also:</p><ul>
+<li>Change advertising or tracking settings on your device</li>
+<li>Reset or delete your Android advertising identifier where supported</li>
+<li>Change Apple tracking permissions where available</li>
+<li>Use any privacy-options control presented by DriveBW or Google's consent message</li>
+<li>Remove ordinary local app data through device settings or by uninstalling the app</li>
+<li>Manage purchases, subscriptions, and refunds through Apple App Store or Google Play</li>
+<li>Contact us at smartmonetaryinvestments@gmail.com for privacy-related questions</li>
+</ul><p>
+    Because DriveBW does not require an account, we may not be able to identify a particular user
+    without sufficient information such as a store transaction reference or anonymous purchase identifier.
+  </p><h4>12. Security</h4><p>
+    We use reasonable technical and organisational measures designed to protect app information.
+    Data sent by third-party SDKs is generally transmitted using encrypted network connections.
+    However, no app, device, storage system, or internet transmission can be guaranteed to be completely secure.
+  </p><h4>13. International Processing</h4><p>
+    Google, Apple, RevenueCat, and their service providers may process information outside Botswana or
+    outside the country where you use DriveBW. Different countries may have different data-protection laws.
+  </p><h4>14. Children's Privacy</h4><p>
+    DriveBW is not directed to children under 13 or to anyone below a higher minimum age required by
+    applicable local law. We do not knowingly ask children to provide personal information directly to
+    DriveBW. If you believe a child has provided information through the app contrary to applicable law,
+    contact us so the matter can be reviewed.
+  </p><h4>15. External Links</h4><p>
+    DriveBW may link to government, app-store, advertising, or other third-party websites. We are not
+    responsible for the privacy, accuracy, security, or content of external websites or services.
+  </p><h4>16. Government Affiliation Disclaimer</h4><p>
+    DriveBW is an independent educational and practice application. DriveBW is not affiliated with,
+    endorsed by, authorised by, or connected to the Government of Botswana, the Department of Road
+    Transport and Safety (DRTS), or any other government entity.
+  </p><p>
+    DriveBW provides driving licence preparation content for learning and practice purposes only.
+    Users should refer to official government sources for current and authoritative information.
+  </p><h4>17. Official Government Sources</h4><ul>
+<li><a href="https://www.gov.bw/transport/driving-licence-application" rel="noopener noreferrer" target="_blank">Botswana driving licence application information</a></li>
+<li><a href="https://www.gov.bw" rel="noopener noreferrer" target="_blank">Government of Botswana</a></li>
+</ul><h4>18. Changes to This Privacy Policy</h4><p>
+    We may update this Privacy Policy when DriveBW's features, advertising, purchases, providers, or
+    legal obligations change. The updated effective date will be shown at the top of this page.
+    Material changes may also be communicated in the app or through the relevant app store where appropriate.
+  </p><h4>19. Contact</h4><p>
+    For privacy questions or requests, contact
+    <a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a>.
+  </p><h4>20. Governing Law</h4><p>
+    This Privacy Policy is governed by the laws of Botswana, subject to any mandatory rights or
+    protections that apply in the country where you use DriveBW.
+  </p><h4>Data Deletion Requests</h4><p>To request deletion of data associated with DriveBW, review the <a href="delete-data.html">DriveBW Data Deletion page</a> or email <a href="mailto:smartmonetaryinvestments@gmail.com?subject=DriveBW%20Data%20Deletion%20Request">smartmonetaryinvestments@gmail.com</a> with the subject <b>DriveBW Data Deletion Request</b>.</p><p><a href="privacy-policy.html"><strong>Open the standalone Privacy Policy</strong></a></p></div>
+</dialog>
+<dialog class="modal" id="terms">
+<div class="modal-head"><h3>Terms &amp; Conditions</h3><button class="close" onclick="closeModal('terms')">×</button></div>
+<div class="modal-body"><p><b>App Name:</b> DriveBW<br/><b>Effective Date:</b> 25 September 2026<br/><b>Contact:</b> <a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a></p><h4>1. Acceptance of These Terms</h4><p>
+    These Terms &amp; Conditions govern your access to and use of DriveBW. By downloading, opening,
+    purchasing through, or using DriveBW, you agree to these Terms and the DriveBW Privacy Policy.
+    If you do not agree, do not use the app.
+  </p><h4>2. Description of DriveBW</h4><p>
+    DriveBW is an independent educational application designed to help users prepare for Botswana
+    driving licence theory tests. Features may include study notes, section quizzes, mock tests,
+    answer review, progress tracking, booking guidance, advertising-supported access, offline access,
+    and paid Premium access.
+  </p><p>
+    DriveBW is provided for learning and practice only. It is not an official examination, licence,
+    legal qualification, driving-school certificate, or guarantee that you will pass an official test.
+  </p><h4>3. No Government Affiliation</h4><p>
+    DriveBW is not affiliated with, endorsed by, authorised by, sponsored by, or connected to the
+    Government of Botswana, the Department of Road Transport and Safety (DRTS), or any other government entity.
+  </p><p>
+    Users must rely on official government sources for current rules, fees, eligibility requirements,
+    booking procedures, and licence information.
+  </p><h4>4. Free Access and Advertising</h4><p>
+    The free version of DriveBW is supported by advertising. Ads may include banner, interstitial,
+    rewarded, or other formats provided by Google AdMob or its advertising partners.
+  </p><ul>
+<li>Some free mock tests may require an internet connection and successful completion of a rewarded advertisement before the test begins.</li>
+<li>If a required rewarded advertisement cannot be loaded or is closed before completion, access to that free mock test may remain unavailable.</li>
+<li>Free quizzes, notes, and other features may require an internet connection or may be subject to reasonable offline-use, cooldown, session, or frequency limits.</li>
+<li>DriveBW may allow access to certain free features when a non-rewarded advertisement cannot be served, but this is not guaranteed.</li>
+<li>Ads may appear before, during, or after free content, subject to applicable law and platform policy.</li>
+</ul><p>
+    DriveBW does not control every advertisement shown and does not endorse products or services merely
+    because an advertisement appears in the app. Advertising availability, content, and frequency may vary.
+  </p><h4>5. Premium and Paid Products</h4><p>
+    DriveBW may offer a one-time non-consumable product known as Lifetime Premium, legacy subscriptions,
+    promotional access, or other paid products. The exact product, price, currency, benefits, and billing
+    terms shown in the app store or purchase screen at the time of purchase form part of these Terms.
+  </p><p>Premium benefits may include:</p><ul>
+<li>Removal of DriveBW-served banner, interstitial, and rewarded advertisements</li>
+<li>Access to mock tests without watching rewarded advertisements</li>
+<li>Expanded or unlimited access to quizzes, notes, mock tests, and offline features</li>
+<li>Other benefits described in the app at the time of purchase</li>
+</ul><p>
+    “Lifetime” means access for as long as DriveBW continues to make the applicable Premium service
+    available, the purchase remains valid, the app remains compatible with the relevant platform, and
+    the user complies with these Terms. It does not guarantee that DriveBW, every feature, or every
+    platform will operate for the purchaser's natural lifetime.
+  </p><p>
+    “Ad-free” means DriveBW will not intentionally serve its normal third-party advertising placements
+    to an active Premium user. It does not apply to store notices, external websites, third-party content,
+    or promotional material that is not an AdMob advertisement served by DriveBW.
+  </p><h4>6. Billing, Renewals, Cancellation, and Refunds</h4><p>
+    Purchases are processed by Google Play or Apple App Store, not directly by DriveBW. You agree to the
+    billing terms of the store through which the purchase is made.
+  </p><ul>
+<li>A one-time Lifetime Premium purchase is non-recurring and does not automatically renew.</li>
+<li>Any legacy subscription renews, expires, or may be cancelled according to the terms shown by the relevant app store.</li>
+<li>Subscription cancellation normally stops future renewal and does not necessarily remove access before the end of the paid billing period.</li>
+<li>Refunds, reversals, chargebacks, and billing disputes are governed by Google Play or Apple App Store policies.</li>
+<li>Taxes, exchange rates, regional pricing, and payment availability may vary by country and store account.</li>
+</ul><h4>7. Purchase Validation and Restoration</h4><p>
+    DriveBW uses RevenueCat and app-store records to validate purchases and determine whether Premium
+    access is active. You may be required to connect to the internet to purchase, restore, or refresh
+    entitlement status.
+  </p><p>
+    Purchases are normally tied to the Apple ID, Google account, store, platform, and transaction through
+    which they were made. Restore Purchase may require the same store account. Cross-platform transfer
+    between Android and iOS is not guaranteed unless DriveBW expressly confirms it in the app.
+  </p><p>
+    Premium access may be suspended or removed if a purchase is refunded, reversed, revoked, fraudulent,
+    invalid, expired, or no longer recognised by the relevant app store or RevenueCat.
+  </p><h4>8. Internet, Device, and Availability Requirements</h4><p>
+    Some DriveBW functions require internet access, a supported device, a compatible operating system,
+    functioning app-store services, advertising availability, or access to third-party servers.
+  </p><p>
+    You are responsible for your device, internet connection, mobile-data charges, app-store account,
+    and compatibility. DriveBW does not guarantee uninterrupted, error-free, or permanently available service.
+  </p><h4>9. Offline Use</h4><p>
+    Certain content may be available offline. Free offline access may be limited by time, feature,
+    session, device, or rolling-use allowance. Premium users may receive broader offline access, but
+    occasional online verification may still be required for purchase validation, updates, security,
+    or restoration.
+  </p><p>
+    Clearing app data, reinstalling the app, changing devices, changing store accounts, modifying the
+    device, or using unsupported software may reset or affect locally stored progress and access records.
+  </p><h4>10. Changes to Features and Prices</h4><p>
+    DriveBW may add, remove, replace, restrict, redesign, or discontinue features, content, advertising
+    placements, free-use allowances, Premium benefits, prices, or supported platforms where reasonably necessary.
+  </p><p>
+    Changes will not create recurring charges for a one-time purchase. Existing statutory rights and
+    valid app-store purchase rights remain subject to applicable law and platform rules.
+  </p><h4>11. User Licence</h4><p>
+    Subject to these Terms, DriveBW grants you a limited, personal, revocable, non-exclusive,
+    non-transferable licence to use the app on devices you own or control for personal educational purposes.
+  </p><p>You may not:</p><ul>
+<li>Copy, reproduce, scrape, record, extract, publish, sell, license, or redistribute DriveBW content</li>
+<li>Reverse engineer, decompile, disassemble, bypass, modify, or create derivative works from the app, except where the law does not permit that restriction</li>
+<li>Bypass advertising, Premium, cooldown, offline-use, purchase, or access-control systems</li>
+<li>Use automated tools, bots, emulators, modified devices, scripts, or exploits to obtain unauthorised access or advertising rewards</li>
+<li>Interfere with the app, its servers, its advertising services, its purchase systems, or another user's access</li>
+<li>Use DriveBW for unlawful, deceptive, abusive, or commercial-resale purposes</li>
+</ul><h4>12. Intellectual Property</h4><p>
+    DriveBW's software, branding, layout, original questions, notes, images, explanations, databases,
+    and design elements are protected by applicable intellectual-property laws. No ownership rights are
+    transferred to you.
+  </p><p>
+    Certain educational concepts may be informed by official or publicly available driving materials,
+    including materials associated with Botswana driving education. Any permissions, acknowledgements,
+    or third-party rights remain subject to their applicable terms. Users may not copy or reuse DriveBW
+    content without permission.
+  </p><h4>13. Accuracy and Educational Disclaimer</h4><p>
+    We aim to provide helpful and accurate learning content, but laws, road rules, official procedures,
+    examination standards, prices, and government information may change. DriveBW does not guarantee that
+    every question, answer, note, link, score, or simulation is complete, error-free, current, or identical
+    to an official examination.
+  </p><p>
+    Always consult official government publications and qualified driving instructors. You remain fully
+    responsible for lawful, safe driving and compliance with road-traffic laws.
+  </p><h4>14. Third-Party Services and Content</h4><p>
+    DriveBW relies on third-party services including Google AdMob, Google Play, Apple App Store,
+    RevenueCat, and external websites. Those services are governed by their own terms, privacy policies,
+    availability, and technical requirements.
+  </p><p>
+    DriveBW is not responsible for third-party advertisements, purchases, websites, outages, decisions,
+    content, or services, except to the extent responsibility cannot legally be excluded.
+  </p><h4>15. Privacy</h4><p>
+    Use of DriveBW is also governed by the <a href="privacy-policy.html">DriveBW Privacy Policy</a>. The free
+    version uses advertising services, and purchase validation uses app-store services and RevenueCat.
+    Review the Privacy Policy before using the app.
+  </p><h4>16. Suspension and Termination</h4><p>
+    We may restrict or terminate access where reasonably necessary to address fraud, abuse, invalid
+    purchases, security risks, legal requirements, app-store action, intellectual-property violations,
+    or material breach of these Terms.
+  </p><p>
+    You may stop using DriveBW at any time. Deleting the app does not automatically cancel an active
+    app-store subscription; subscriptions must be managed through the relevant store account.
+  </p><h4>17. Disclaimer of Warranties</h4><p>
+    To the maximum extent permitted by law, DriveBW is provided “as is” and “as available.” We disclaim
+    implied warranties of merchantability, fitness for a particular purpose, accuracy, availability,
+    non-infringement, and uninterrupted operation, except where such warranties cannot legally be excluded.
+  </p><h4>18. Limitation of Liability</h4><p>
+    To the maximum extent permitted by law, DriveBW and its operator will not be liable for indirect,
+    incidental, special, consequential, punitive, or economic loss arising from use of or inability to
+    use the app, including failure to pass a test, loss of progress, lost data, lost opportunities,
+    advertising content, store decisions, or reliance on educational material.
+  </p><p>
+    Nothing in these Terms excludes liability or consumer rights that cannot legally be excluded under
+    applicable law.
+  </p><h4>19. Apple App Store Terms</h4><p>
+    For versions obtained through Apple's App Store, Apple's applicable Usage Rules and Standard Licensed
+    Application End User License Agreement may also apply to the extent required by Apple or not replaced
+    by a valid custom agreement.
+  </p><p>
+<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">Apple Standard Licensed Application End User License Agreement</a>
+</p><h4>20. Official Government Sources</h4><ul>
+<li><a href="https://www.gov.bw/transport/driving-licence-application" rel="noopener noreferrer" target="_blank">Botswana driving licence application information</a></li>
+<li><a href="https://www.gov.bw" rel="noopener noreferrer" target="_blank">Government of Botswana</a></li>
+</ul><h4>21. Changes to These Terms</h4><p>
+    We may update these Terms when DriveBW's services, advertising, purchases, legal obligations, or
+    platform requirements change. The effective date at the top will be updated. Continued use after an
+    update means you accept the revised Terms, subject to any consent required by law.
+  </p><h4>22. Severability and No Waiver</h4><p>
+    If any provision is found invalid or unenforceable, the remaining provisions will continue to apply.
+    Failure to enforce a provision is not a waiver of the right to enforce it later.
+  </p><h4>23. Governing Law and Jurisdiction</h4><p>
+    These Terms are governed by the laws of Botswana, subject to mandatory consumer rights that apply in
+    your country. Disputes will be handled in the courts of Botswana unless applicable law requires otherwise.
+  </p><h4>24. Contact</h4><p>
+    For questions about these Terms, contact
+    <a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a>.
+  </p><p><a href="terms-and-conditions.html"><strong>Open the standalone Terms &amp; Conditions</strong></a></p></div>
+</dialog>
+<dialog class="modal" id="deletion">
+<div class="modal-head">
+<h3>DriveBW Data Deletion</h3>
+<button class="close" onclick="closeModal('deletion')" type="button">×</button>
+</div>
+<div class="modal-body">
+<p>
+<b>App Name:</b> DriveBW<br/>
+<b>Last Updated:</b> 25 September 2026<br/>
+<b>Contact:</b>
+<a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a>
+</p>
+<h4>Request deletion of data associated with DriveBW</h4>
+<p>
+      DriveBW does not require users to create a DriveBW account. Most learning progress,
+      quiz results, mock-test history, settings and preferences are stored locally on the user's device.
+    </p>
+<p>
+      To request deletion of data associated with DriveBW that is under our control, email
+      <a href="mailto:smartmonetaryinvestments@gmail.com?subject=DriveBW%20Data%20Deletion%20Request">
+        smartmonetaryinvestments@gmail.com
       </a>
-      <div class="nav-links" aria-label="Main navigation">
-        <a href="#features">Features</a>
-        <a href="#screens">Screens</a>
-        <a href="#legal">Legal</a>
-        <button class="nav-link-button" onclick="openModal('support')">Support</button>
-        <button class="nav-link-button" onclick="openModal('contact')">Contact</button>
-      </div>
-      <a class="btn primary" href="#download">Download now</a>
-    </div>
-  </nav>
-
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow"><span class="dot"></span> Available now for Botswana learners</div>
-          <h1>Pass the theory with <span class="gradient-text">practice that feels simple.</span></h1>
-          <p>DriveBW helps you prepare for Botswana driving licence tests with clean mock exams, section quizzes, study notes, answer reviews, and offline learning — all in one focused app.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#download">Download DriveBW</a>
-            <a class="btn" href="#screens">See the app</a>
-          </div>
-          <div class="stats" aria-label="DriveBW highlights">
-            <div class="stat"><strong>Class B & C</strong><span>Practice support</span></div>
-            <div class="stat"><strong>Offline</strong><span>Learn anywhere</span></div>
-            <div class="stat"><strong>Review</strong><span>Know every mistake</span></div>
-          </div>
-        </div>
-
-        <div class="phone-stage" aria-label="DriveBW app preview">
-          <div class="glow-card"></div>
-          <img class="hero-phone" src="drivebw_phone_image_1.png" alt="DriveBW phone app preview" />
-          <div class="mini-card one">Timed tests<span>Build real exam confidence</span></div>
-          <div class="mini-card two">Smart review<span>Fix mistakes faster</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="features">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-kicker">Why DriveBW</div>
-          <h2>Less confusion. More confident practice.</h2>
-          <p>Everything is designed to keep learners focused: clear sections, quick quizzes, timed mock tests, and answers that help you understand what went wrong.</p>
-        </div>
-        <div class="features">
-          <article class="feature-card">
-            <div class="icon">⏱</div>
-            <h3>Mock tests with timers</h3>
-            <p>Practice under exam-style pressure so the real test feels more familiar.</p>
-          </article>
-          <article class="feature-card">
-            <div class="icon">📚</div>
-            <h3>Section notes</h3>
-            <p>Study by topic and focus on the parts you actually need to improve.</p>
-          </article>
-          <article class="feature-card">
-            <div class="icon">✅</div>
-            <h3>Answer reviews</h3>
-            <p>See your chosen answers, correct answers, and learn from each mistake.</p>
-          </article>
-          <article class="feature-card">
-            <div class="icon">🌙</div>
-            <h3>Clean dark interface</h3>
-            <p>A sharp, modern layout made for comfortable studying at any time.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="screens">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-kicker">Inside the app</div>
-          <h2>Built to make every session feel useful.</h2>
-          <p>From the first practice question to the final review screen, DriveBW keeps the experience direct, clean, and easy to follow.</p>
-        </div>
-        <div class="showcase">
-          <div class="screen-card"><img src="drivebw_phone_image_2.png" alt="DriveBW timed test screen" /></div>
-          <div class="screen-card"><img src="drivebw_phone_image_3.png" alt="DriveBW answer review screen" /></div>
-          <div class="screen-card"><img src="drivebw_phone_image_5.png" alt="DriveBW study notes screen" /></div>
-          <div class="screen-card"><img src="drivebw_phone_image_8.png" alt="DriveBW booking information screen" /></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap split">
-        <div class="quote-box">
-          <div class="section-kicker">The goal</div>
-          <h2>Walk in prepared, not stressed.</h2>
-          <p>DriveBW is for learners who want to stop guessing and start practicing with structure. Learn the signs, test yourself, review your mistakes, and come back stronger.</p>
-        </div>
-        <div class="check-list">
-          <div class="check"><span class="tick">✓</span><span><b>Practice by class.</b> Prepare for Botswana driving licence learning with focused Class B and Class C support.</span></div>
-          <div class="check"><span class="tick">✓</span><span><b>Study without noise.</b> Simple screens, clear questions, and no unnecessary distractions.</span></div>
-          <div class="check"><span class="tick">✓</span><span><b>Use it offline.</b> Most learning features work using content stored directly on your device.</span></div>
-          <div class="check"><span class="tick">✓</span><span><b>Upgrade when ready.</b> Free practice is available, with premium access for unlimited tests and all sections.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="download">
-      <div class="wrap">
-        <div class="download">
-          <div class="section-kicker">DriveBW</div>
-          <h2>Available now on Google Play and the App Store.</h2>
-          <p>Download DriveBW and turn short study sessions into real progress. Practice the questions, learn the sections, and review every answer with confidence.</p>
-          <div class="store-buttons">
-            <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.drivebw.app&hl=en-gb&utm_source=apac_med" target="_blank" rel="noopener" aria-label="Download DriveBW on Google Play">Available on Google Play</a>
-            <a class="btn" href="https://apps.apple.com/bw/app/drivebw/id6777334737" target="_blank" rel="noopener" aria-label="Download DriveBW on the App Store">Available on the App Store</a>
-          </div>
-          <p class="seo-note"><b>DriveBW</b> is built for learners searching for Botswana driving licence practice, Botswana theory test preparation, Class B driving test questions, Class C driving test questions, road signs quizzes, mock driving tests, DRTS driving licence information, and offline learner driver study notes.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="legal">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-kicker">Trust & transparency</div>
-          <h2>Independent learning tool.</h2>
-          <p>DriveBW is an educational practice app and is not affiliated with, endorsed by, authorized by, or connected to the Government of Botswana, DRTS, or any government entity.</p>
-        </div>
-        <div class="legal-grid">
-          <div class="legal-card">
-            <h3>Privacy Policy</h3>
-            <p>DriveBW does not directly collect, store, or sell personal information. Most features operate offline, with subscriptions handled by the app stores.</p>
-            <button class="btn" onclick="openModal('privacy')">Read privacy policy</button>
-          </div>
-          <div class="legal-card">
-            <h3>Terms & Conditions</h3>
-            <p>DriveBW is for educational and practice purposes only. Users should always refer to official Botswana government sources for current licensing information.</p>
-            <button class="btn" onclick="openModal('terms')">Read terms</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-inner">
-      <div>© 2026 DriveBW. Built for Botswana driving licence learners.</div>
-      <div class="footer-links">
-        <button class="footer-link-button" onclick="openModal('support')">Support</button>
-        <button class="footer-link-button" onclick="openModal('contact')">Contact</button>
-        <a href="https://play.google.com/store/apps/details?id=com.drivebw.app&hl=en-gb&utm_source=apac_med" target="_blank" rel="noopener">Google Play</a>
-        <a href="https://apps.apple.com/bw/app/drivebw/id6777334737" target="_blank" rel="noopener">App Store</a>
-        <a href="https://www.gov.bw/transport/driving-licence-application" target="_blank" rel="noopener">Official licence source</a>
-        <a href="https://www.gov.bw" target="_blank" rel="noopener">gov.bw</a>
-      </div>
-    </div>
-  </footer>
-
-  <dialog class="modal" id="contact">
-    <div class="modal-head"><h3>Contact DriveBW</h3><button class="close" onclick="closeModal('contact')">×</button></div>
-    <div class="modal-body">
-      <h4>Contact Information</h4>
-      <p>Have a question, feedback, subscription concern, or app issue? Contact DriveBW by email and we will get back to you as soon as possible.</p>
-      <h4>Email</h4>
-      <p><a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a></p>
-      <h4>What to include</h4>
-      <ul>
-        <li>Your device type, such as Android phone, tablet, or iPhone.</li>
-        <li>The app version, if available.</li>
-        <li>A short explanation of the issue or question.</li>
-      </ul>
-      <h4>App</h4>
-      <p><b>DriveBW</b><br>Botswana driving licence practice and learning app for Class B and Class C learners.</p>
-    </div>
-  </dialog>
-
-  <dialog class="modal" id="support">
-    <div class="modal-head"><h3>Support</h3><button class="close" onclick="closeModal('support')">×</button></div>
-    <div class="modal-body">
-      <h4>Need help with DriveBW?</h4>
-      <p>If you need help using the app, have feedback, or have a subscription-related question, contact DriveBW support by email.</p>
-      <h4>Support Email</h4>
-      <p><a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a></p>
-      <h4>Faster support</h4>
-      <p>When emailing, please include your device type, app version if available, and a short description of what happened.</p>
-    </div>
-  </dialog>
-
-  <dialog class="modal" id="privacy">
-    <div class="modal-head"><h3>Privacy Policy</h3><button class="close" onclick="closeModal('privacy')">×</button></div>
-    <div class="modal-body">
-      <p><b>App Name:</b> DriveBW<br><b>Effective Date:</b> 18th May 2026</p>
-      <h4>Introduction</h4><p>This Privacy Policy explains how DriveBW operates and how your information is handled when you use the app.</p>
-      <h4>Who This App Is For</h4><p>DriveBW is a driving licence practice and learning application designed for users preparing for Botswana driving licence tests.</p>
-      <h4>Information We Collect</h4><p>DriveBW does not directly collect, store, or share personal information. The app operates primarily offline and does not require users to create an account. We do not use analytics tools, advertising trackers, or third-party tracking services.</p>
-      <h4>How We Use Information</h4><ul><li>To provide driving licence practice and learning features</li><li>To locally store app settings and progress on your device</li><li>To verify premium subscription access through Google Play Store or Apple App Store services</li><li>To maintain and improve app functionality</li></ul>
-      <h4>Offline Functionality</h4><p>Most DriveBW features operate offline using content stored directly on your device.</p>
-      <h4>Subscription and Billing</h4><p>Premium subscriptions and purchases are processed securely through Google Play Store and Apple App Store services. DriveBW does not directly store or process payment card information.</p>
-      <h4>How Your Data Is Stored</h4><p>DriveBW stores app settings and progress locally on your device. We do not store personal information on external servers.</p>
-      <h4>Data Sharing</h4><p>DriveBW does not sell, share, or distribute personal information because the app does not directly collect personal information.</p>
-      <h4>Data Retention</h4><p>DriveBW does not retain personal information on external servers. Any locally stored app data remains on your device unless removed by uninstalling the app.</p>
-      <h4>Your Rights</h4><ul><li>You may cancel your subscription at any time through Google Play Store or Apple App Store settings.</li><li>You may remove locally stored app data by uninstalling the app.</li></ul>
-      <h4>Security</h4><p>We take reasonable measures to ensure the app functions securely. However, no software or electronic storage method can guarantee absolute security.</p>
-      <h4>Children's Privacy</h4><p>DriveBW does not knowingly collect personal information from children or users of any age.</p>
-      <h4>International Use</h4><p>DriveBW is intended for Botswana driving licence learning use. If you access the app from another location, you do so at your own discretion.</p>
-      <h4>Third-Party Services</h4><p>DriveBW may rely on platform services such as Google Play Store and Apple App Store for subscription processing, app distribution, and related platform functionality.</p>
-      <h4>Government Affiliation Disclaimer</h4><p>DriveBW is an independent educational and practice application. DriveBW is not affiliated with, endorsed by, authorized by, or connected to the Government of Botswana, the Department of Road Transport and Safety (DRTS), or any other government entity.</p><p>DriveBW provides driving licence preparation content for learning and practice purposes only. Users should always refer to official government sources for the most accurate and up-to-date driving licence information.</p>
-      <h4>Official Government Sources</h4><p><a href="https://www.gov.bw/transport/driving-licence-application" target="_blank" rel="noopener">Driving licence application</a><br><a href="https://www.gov.bw" target="_blank" rel="noopener">gov.bw</a></p>
-      <h4>Changes to This Privacy Policy</h4><p>We may update this Privacy Policy from time to time. Continued use of the app after changes are made means you accept the revised policy.</p>
-      <h4>Contact</h4><p>For privacy-related questions, contact <a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a>.</p>
-      <h4>Governing Law</h4><p>This Privacy Policy is governed by the laws of Botswana.</p>
-    </div>
-  </dialog>
-
-  <dialog class="modal" id="terms">
-    <div class="modal-head"><h3>Terms & Conditions</h3><button class="close" onclick="closeModal('terms')">×</button></div>
-    <div class="modal-body">
-      <p><b>App Name:</b> DriveBW<br><b>Effective Date:</b> 18th May 2026</p>
-      <h4>Introduction</h4><p>Welcome to DriveBW. These Terms & Conditions govern your use of the mobile application. By using the app, you agree to these Terms. If you do not agree, please do not use the app.</p>
-      <h4>Description of Service</h4><p>DriveBW is a driving licence practice and learning application designed to help users prepare for driving licence tests in Botswana. The app provides mock tests simulating real driving exams, section-based quizzes, notes, and answer review tools. This app is intended for educational and practice purposes only.</p>
-      <h4>No Government Affiliation</h4><p>DriveBW is not affiliated with, endorsed by, or partnered with any government authority, including the Botswana Department of Road Transport and Safety (DRTS), and is not an official driving test provider. Use of this app does not guarantee success in any official driving test.</p>
-      <h4>Offline Functionality</h4><p>Most DriveBW features operate offline using content stored directly on your device.</p>
-      <h4>Subscription & Payments</h4><p><b>Free Plan:</b> 1 mock test per month and access limited to Sections 1–4.</p><p><b>Paid Plan:</b> Unlimited mock tests and access to all sections.</p><p>Payments and subscriptions are processed through Google Play Store and Apple App Store services. Users may cancel subscriptions at any time through their app store account settings. Refunds are subject to Google Play Store or Apple App Store policies.</p>
-      <h4>Acceptable Use</h4><ul><li>Do not copy, reproduce, distribute, or resell the question bank or app content.</li><li>Do not attempt to reverse engineer, modify, or exploit the app.</li><li>Do not misuse premium subscription access or app functionality.</li></ul><p>Violation of these Terms may result in restriction or termination of app access.</p>
-      <h4>Intellectual Property</h4><p>All content within DriveBW, including questions, notes, images, branding, and design elements, is protected. Some educational materials are inspired by publicly available driving education resources, including work associated with Ingrid Kittmann and Matshwao, but are presented in a transformed and independent educational format. Users may not copy, reproduce, or reuse app content without permission.</p>
-      <h4>Accuracy of Content</h4><p>While we aim to provide accurate and helpful learning material, DriveBW does not guarantee that all content perfectly reflects official examination standards or real-world driving test conditions.</p>
-      <h4>Limitation of Liability</h4><p>DriveBW is not responsible for failure to pass any driving test, decisions made based on app content, or any loss or damages resulting from use of the app. Use of the app is at your own discretion and risk.</p>
-      <h4>Data & Privacy</h4><p>DriveBW operates primarily offline and does not directly collect or store personal information on external servers. App settings and progress may be stored locally on your device.</p>
-      <h4>Third-Party Services</h4><p>DriveBW may rely on platform services such as Google Play Store and Apple App Store for app distribution, subscription processing, and related platform functionality.</p>
-      <h4>Government Affiliation Disclaimer</h4><p>DriveBW is an independent educational and practice application. DriveBW is not affiliated with, endorsed by, authorized by, or connected to the Government of Botswana, the Department of Road Transport and Safety (DRTS), or any other government entity.</p><p>DriveBW provides driving licence preparation content for learning and practice purposes only. Users should always refer to official government sources for the most accurate and up-to-date driving licence information.</p>
-      <h4>Official Government Sources</h4><p><a href="https://www.gov.bw/transport/driving-licence-application" target="_blank" rel="noopener">Driving licence application</a><br><a href="https://www.gov.bw" target="_blank" rel="noopener">gov.bw</a></p>
-      <h4>Termination</h4><p>We reserve the right to restrict or terminate access to the app if users violate these Terms or misuse the service.</p>
-      <h4>Changes to Terms</h4><p>We may update these Terms & Conditions from time to time. Continued use of the app after updates means you accept the revised Terms.</p>
-      <h4>Contact</h4><p>For questions regarding these Terms & Conditions, contact <a href="mailto:smartmonetaryinvestments@gmail.com">smartmonetaryinvestments@gmail.com</a>.</p>
-      <h4>Governing Law</h4><p>These Terms & Conditions are governed by the laws of Botswana. Any disputes will be handled within Botswana jurisdiction.</p>
-    </div>
-  </dialog>
-
-  <script>
+      using the subject <b>DriveBW Data Deletion Request</b>.
+    </p>
+<p>
+      If the request concerns a purchase, you may include a Google Play order or transaction reference
+      so that the relevant record can be identified. Do not send passwords or payment-card information.
+    </p>
+<h4>Delete data stored on your Android device</h4>
+<ol>
+<li>Open Android Settings.</li>
+<li>Open Apps and select DriveBW.</li>
+<li>Open Storage.</li>
+<li>Select Clear storage or Clear data.</li>
+</ol>
+<p>Uninstalling DriveBW will also normally remove ordinary locally stored app data.</p>
+<h4>Data that may be deleted</h4>
+<ul>
+<li>Information voluntarily provided to DriveBW support</li>
+<li>Anonymous or pseudonymous identifiers under DriveBW's control</li>
+<li>Purchase-entitlement information where deletion is technically and legally permitted</li>
+<li>Other user-related information directly controlled by DriveBW</li>
+</ul>
+<h4>Data that may be retained</h4>
+<p>Certain information may need to be retained where reasonably necessary for:</p>
+<ul>
+<li>Financial and accounting requirements</li>
+<li>Purchase verification, refunds and entitlement management</li>
+<li>Fraud prevention and security</li>
+<li>Legal, regulatory or app-store requirements</li>
+</ul>
+<p>
+      Where retention is required, information will be retained only for the period reasonably
+      necessary for those purposes or as required by applicable law.
+    </p>
+<h4>Third-party services</h4>
+<p>
+      DriveBW uses services including Google AdMob, Google Play, RevenueCat and Apple App Store services.
+      Some information is controlled independently by those providers. DriveBW cannot directly delete
+      information controlled solely by Google, Apple, RevenueCat or another third party.
+    </p>
+<h4>Dedicated deletion page</h4>
+<p>
+<a href="delete-data.html"><strong>Open the DriveBW Data Deletion page</strong></a>.
+      This is the public web resource used for data-deletion requests.
+    </p>
+</div>
+</dialog><script>
     document.querySelectorAll('dialog').forEach((dialog) => {
       dialog.addEventListener('click', (event) => {
         const rect = dialog.getBoundingClientRect();
@@ -593,7 +853,7 @@
       });
     });
   </script>
-  <script>
+<script>
     function openModal(id) {
       const modal = document.getElementById(id);
       if (!modal) return;
@@ -620,6 +880,6 @@
       });
     });
   </script>
-
 </body>
 </html>
+
